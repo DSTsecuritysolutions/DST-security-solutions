@@ -1,1 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DST Security Solutions | Cybersecurity & Digital Services</title>
+
+    <meta name="description" content="DST Security Solutions provides approachable cybersecurity, website, and digital support services for individuals, families, and small businesses. Serving Parker, Wise and Tarrant Counties.">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0b0f19;
+            color: #f4f4f5;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #080b12;
+            border-bottom: 1px solid #242a38;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: auto;
+            padding: 18px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 22px;
+        }
+
+        nav a {
+            color: #d5d7dc;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #e63946;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+            background:
+                radial-gradient(circle at center, #1a2233 0%, #0b0f19 55%);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #c7cad1;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .service-area {
+            color: #e63946;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 26px;
+            margin: 6px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button-primary {
+            background: #e63946;
+            color: white;
+        }
+
+        .button-primary:hover {
+            background: #c92f3b;
+            transform: translateY(-2px);
+        }
+
+        .button-secondary {
+            border: 1px solid #555d6d;
+            color: white;
+        }
+
+        .button-secondary:hover {
+            border-color: #e63946;
+            color: #e63946;
+        }
+
+        section {
+            padding: 80px 24px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #aeb3bf;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .services {
+            background: #101522;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #171d2a;
+            border: 1px solid #293142;
+            border-radius: 10px;
+            padding: 30px;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #e63946;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: #b9bec9;
+        }
+
+        .about {
+            background: #0b0f19;
+        }
+
+        .about-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-box p {
+            color: #c3c7d0;
+            margin-bottom: 18px;
+        }
+
+        .pricing {
+            background: #101522;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .price-card {
+            background: #171d2a;
+            border: 1px solid #293142;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        .price-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: #e63946;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .price-card ul {
+            list-style: none;
+            color: #c3c7d0;
+        }
+
+        .price-card li {
+            margin: 9px 0;
+        }
+
+        .price-card li::before {
+            content: "✓ ";
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .contact {
+            text-align: center;
+            background: #0b0f19;
+        }
+
+        .contact-box {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #c3c7d0;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            background: #080b12;
+            border-top: 1px solid #242a38;
+            text-align: center;
+            padding: 30px 20px;
+            color: #858b98;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div class="logo">DST <span>Security Solutions</span></div>
+
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <h1>Security Made <span>Simple.</span></h1>
+
+            <p>
+                Practical cybersecurity, website, and digital support
+                for families, individuals, and small businesses.
+            </p>
+
+            <div class="service-area">
+                Serving Parker, Wise and Tarrant Counties
+            </div>
+
+            <a href="#contact" class="button button-primary">
+                Request a Consultation
+            </a>
+
+            <a href="#services" class="button button-secondary">
+                Explore Services
+            </a>
+
+        </div>
+    </section>
+
+
+    <section id="services" class="services">
+
+        <div class="container">
+
+            <h2 class="section-title">What We Do</h2>
+
+            <p class="section-subtitle">
+                Technology doesn't have to be intimidating.
+                DST helps make your digital life safer, easier,
+                and easier to understand.
+            </p>
+
+            <div class="service-grid">
+
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>Cybersecurity</h3>
+                    <p>
+                        Security checkups, account protection,
+                        password guidance, device security,
+                        privacy help, and practical cybersecurity education.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Family Digital Safety</h3>
+                    <p>
+                        Help setting up parental controls,
+                        privacy settings, safer devices,
+                        and age-appropriate digital protections.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌐</div>
+                    <h3>Website Services</h3>
+                    <p>
+                        Simple, professional websites for small businesses,
+                        personal projects, organizations, and local services.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Digital Support</h3>
+                    <p>
+                        Practical help with everyday technology,
+                        online accounts, organization, and digital tasks.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="about" class="about">
+
+        <div class="container">
+
+            <div class="about-box">
+
+                <h2 class="section-title">Technology Without the Fear</h2>
+
+                <p>
+                    DST Security Solutions was created to make cybersecurity
+                    and technology more approachable.
+                </p>
+
+                <p>
+                    Whether you're protecting your family, starting a small
+                    business, building a website, or simply trying to make
+                    sense of your digital life, DST focuses on practical
+                    solutions without unnecessary jargon or scare tactics.
+                </p>
+
+                <p>
+                    Our goal is simple: help you feel more confident
+                    about the technology you use every day.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="pricing" class="pricing">
+
+        <div class="container">
+
+            <h2 class="section-title">Simple Pricing</h2>
+
+            <p class="section-subtitle">
+                Straightforward services with no confusing packages.
+            </p>
+
+            <div class="pricing-grid">
+
+                <div class="price-card">
+                    <h3>Cybersecurity Support</h3>
+                    <div class="price">$35/hr</div>
+
+                    <ul>
+                        <li>Security checkups</li>
+                        <li>Account protection</li>
+                        <li>Privacy guidance</li>
+                        <li>Security education</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <h3>Digital Assistance</h3>
+                    <div class="price">$35/hr</div>
+
+                    <ul>
+                        <li>Technology assistance</li>
+                        <li>Online account help</li>
+                        <li>Digital organization</li>
+                        <li>General support</li>
+                    </ul>
+                </div>
+
+                <div class="price-card">
+                    <h3>Website Services</h3>
+                    <div class="price">Custom Quote</div>
+
+                    <ul>
+                        <li>Personal websites</li>
+                        <li>Small business websites</li>
+                        <li>Website updates</li>
+                        <li>Basic maintenance</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2 class="section-title">Let's Talk</h2>
+
+                <p>
+                    Have a cybersecurity concern, website project,
+                    or digital task you need help with?
+                    Get in touch and let's figure out a solution.
+                </p>
+
+                <a
+                    href="mailto:DSTsecuritysolutions@gmail.com"
+                    class="button button-primary">
+                    Email DST Security Solutions
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 DST Security Solutions. All rights reserved.
+    </p>
+
+    <p>
+        Serving Parker, Wise and Tarrant Counties
+    </p>
+
+</footer>
+
+</body>
+</html>
 
